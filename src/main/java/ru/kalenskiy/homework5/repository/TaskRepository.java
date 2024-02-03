@@ -6,9 +6,18 @@ import ru.kalenskiy.homework5.model.Task;
 import ru.kalenskiy.homework5.model.impl.TaskStatus;
 
 import java.util.List;
+
+/**
+ * Репозиторий задач
+ */
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
+    /**
+     * Метод получения списка задач по статусу выполнения
+     * @param status статус выполнения задачи
+     * @return список задач отфильтрованных по статусу
+     */
     List<Task> findAllByTaskStatus(TaskStatus status);
 
 }
